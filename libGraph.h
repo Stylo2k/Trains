@@ -6,6 +6,7 @@
 /*the previous values are just as a start. Once an overflow happens a reallocation takes place*/
 #define string char*    /*ease of reading*/
 #define infinity 32767  /*max int value*/
+#define NOT_REACHABLE 32767
 
 typedef struct token *Edge;
 typedef struct vertex *Vertex;
@@ -16,6 +17,7 @@ typedef struct graph *Graph;
 #include <stdlib.h>
 #include <assert.h>
 #include <string.h>
+#include "scanner.h"
 
 typedef struct vertex {
     string name;
