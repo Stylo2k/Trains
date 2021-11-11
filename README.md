@@ -1,8 +1,8 @@
 # Trains
 NS, like C program. That uses Dijkstra to calculate the distance between 2 stations..but made interesting.
 
-> If you wish to take a deep dive into all the work that went into making this code. Please have a look at the [Programming Report](programming_report.pdf) (included in the repo) I made.
-A pic that describes the structure of the code ![](graph.png)
+> If you wish to take a deep dive into all the work that went into making this code. Please have a look at the [Programming Report](resources/programming_report.pdf) (included in the repo) I made.
+A pic that describes the structure of the code ![](resources/graph.png)
 
 
 <p>
