@@ -2,7 +2,11 @@
 #include <stdlib.h>
 #include "libGraph.h"
 
-/*goes back until from goal to start. Then prints*/
+/**
+ * @brief 
+ * prints the route taken. By tracing back the steps from the goal
+ * @param visited the visited vertex
+ */
 void printRoute (Vertex visited) { 
     if (visited == NULL) {
         return;
@@ -11,7 +15,11 @@ void printRoute (Vertex visited) {
     printf("%s\n", visited->name);
 }
 
-/*resets the values modifed to erase the route for next traverse*/
+/**
+ * @brief 
+ * resets the values modifed to erase the route for the next graph traverse
+ * @param railNetwork the railNetwork to erase the route from
+ */
 void eraseRoute (Graph railNetwork) {
     int i = 0;
     Vertex temp = railNetwork->stations[i];
@@ -24,7 +32,12 @@ void eraseRoute (Graph railNetwork) {
     }
 }
 
-/*returns the closest station*/
+/**
+ * @brief 
+ * checks for the closest station
+ * @param railNetwork the railNetwork to use for searchin
+ * @return Vertex the closest vertex
+ */
 Vertex closestStation(Graph railNetwork) {
     int i = 0;
     int distance = infinity;
@@ -42,7 +55,12 @@ Vertex closestStation(Graph railNetwork) {
     return V;
 }
 
-/*returns the number of vertices in a graph*/
+/**
+ * @brief returns the number of vertices in a graph
+ * 
+ * @param railNetwork the railNetwork to count the number of vertices
+ * @return int the number of vertices in a graph
+ */
 int nrVertex (Graph railNetwork) {
     int i = 0;
     while(railNetwork->stations[i]) {
@@ -51,6 +69,15 @@ int nrVertex (Graph railNetwork) {
     return i;
 }
 
+/**
+ * @brief 
+ * Dijkstra's Algorithm to find the closest path between two vertices
+ * 
+ * @param railNetwork the railNetwork to use
+ * @param start the start vertex
+ * @param goal the end goal
+ * @return int the shortest distance between start and goal. Or `Not Reachable`
+ */
 int dijkstra (Graph railNetwork, Vertex start, Vertex goal) {
     start->distance = 0; //set initail distance to 0
     Vertex current;
@@ -75,5 +102,5 @@ int dijkstra (Graph railNetwork, Vertex start, Vertex goal) {
         }
         nrUnvisited--;
     }
-    return infinity;
+    return NOT_REACHABLE;
 }

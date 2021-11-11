@@ -1,10 +1,10 @@
 CC     = gcc
 CFLAGS = -O2 -std=c99 -pedantic -Wall -Wno-unused-result
 
-graph: graphMain.c libGraph.c
+graph: graphMain.c scanner.c libGraph.c 
 	$(CC) $(CFLAGS) $^ -g -o $@
 	
-main: main.c libGraph.c dijkstra.c
+main: main.c scanner.c libGraph.c dijkstra.c
 	$(CC) $(CFLAGS) $^ -g -o $@
 
 test: main
@@ -19,4 +19,5 @@ time: main
 
 clean:
 	rm main
+	rm graph
 	clear
