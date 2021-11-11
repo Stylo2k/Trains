@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "libGraph.h"
+#include "../libGraph.h"
 
 /**
  * @brief 
